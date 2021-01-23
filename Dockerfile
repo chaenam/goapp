@@ -3,8 +3,8 @@ FROM golang:1.11-alpine AS build
 MAINTAINER Chaenam Jeong <cnjeong@gmail.com>
 LABEL "purpose"="Go Application Service Development"
 
-WORKDIR /src
-COPY main.go go.*/src/
+WORKDIR /src/
+COPY main.go go.* /src/
 RUN CGO_ENABLED=0 go build -o /bin/demo
 
 FROM scratch
